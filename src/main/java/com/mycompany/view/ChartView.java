@@ -49,7 +49,6 @@ public class ChartView extends javax.swing.JFrame {
         checkBoxGrade = new javax.swing.JCheckBox();
         buttonFechar = new javax.swing.JButton();
         buttonPadrao = new javax.swing.JButton();
-        buttonDesfazer = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         comboBoxGraficoBase = new javax.swing.JComboBox<>();
         panelGrafico = new javax.swing.JPanel();
@@ -88,9 +87,6 @@ public class ChartView extends javax.swing.JFrame {
 
         buttonPadrao.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         buttonPadrao.setText("Restaurar padrão");
-
-        buttonDesfazer.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        buttonDesfazer.setText("Desfazer");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setText("Gráfico padrão");
@@ -131,11 +127,9 @@ public class ChartView extends javax.swing.JFrame {
                         .addGap(21, 21, 21)
                         .addComponent(panelGrafico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(460, Short.MAX_VALUE)
+                        .addContainerGap(521, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(buttonDesfazer)
-                                .addGap(18, 18, 18)
                                 .addComponent(buttonPadrao)
                                 .addGap(18, 18, 18)
                                 .addComponent(buttonFechar))
@@ -178,8 +172,7 @@ public class ChartView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonFechar)
-                    .addComponent(buttonPadrao)
-                    .addComponent(buttonDesfazer))
+                    .addComponent(buttonPadrao))
                 .addContainerGap())
         );
 
@@ -223,10 +216,6 @@ public class ChartView extends javax.swing.JFrame {
                 new ChartView().setVisible(true);
             }
         });
-    }
-
-    public JButton getButtonDesfazer() {
-        return buttonDesfazer;
     }
 
     public JButton getButtonFechar() {
@@ -283,7 +272,6 @@ public class ChartView extends javax.swing.JFrame {
         
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonDesfazer;
     private javax.swing.JButton buttonFechar;
     private javax.swing.JButton buttonPadrao;
     private javax.swing.JCheckBox checkBoxCorGrupo;

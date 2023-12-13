@@ -5,6 +5,7 @@
 package com.mycompany.builder;
 
 import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
 
 /**
  *
@@ -12,4 +13,5 @@ import org.jfree.chart.ChartPanel;
  */
 public interface GraficoBuilder {
     public ChartPanel createChart();
+    public JFreeChart getChart();
 }

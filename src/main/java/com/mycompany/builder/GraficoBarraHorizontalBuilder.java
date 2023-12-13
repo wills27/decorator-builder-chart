@@ -4,12 +4,14 @@
  */
 package com.mycompany.builder;
 
+import com.decorator.GraficoSimples;
 import com.mycompany.auxiliar.CSVReader;
 import java.awt.Dimension;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.category.DefaultCategoryDataset;
 
 /**
@@ -17,7 +19,7 @@ import org.jfree.data.category.DefaultCategoryDataset;
  * @author mathe
  */
 public class GraficoBarraHorizontalBuilder implements GraficoBuilder{
-
+    private JFreeChart savedChart;
     @Override
     public ChartPanel createChart(){
         
@@ -26,18 +28,16 @@ public class GraficoBarraHorizontalBuilder implements GraficoBuilder{
         dataset = csvReader.readCsvToDataset();
         
         
-        JFreeChart chart = ChartFactory.createBarChart(
-            "",
-            "",
-            "",
-            dataset,
-            PlotOrientation.HORIZONTAL,
-            true, true, false);
-        
+        JFreeChart chart = new GraficoSimples().criarGrafico(PlotOrientation.HORIZONTAL);
+        savedChart = chart;
         ChartPanel panelChart = new ChartPanel(chart);
         panelChart.setPreferredSize(new Dimension(500, 300));
         
         return panelChart;
     }
-
+    @Override
+    public JFreeChart getChart()
+    {
+        return savedChart;
+    }
 }

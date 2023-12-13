@@ -4,6 +4,7 @@
  */
 package com.mycompany.builder;
 
+import com.decorator.GraficoSimples;
 import com.mycompany.auxiliar.CSVReader;
 import java.awt.Dimension;
 import javax.swing.JPanel;
@@ -18,7 +19,7 @@ import org.jfree.data.category.DefaultCategoryDataset;
  * @author mathe
  */
 public class GraficoBarraVerticalBuilder implements GraficoBuilder{
-    
+    private JFreeChart savedChart;
     @Override
     public ChartPanel createChart(){
         
@@ -26,20 +27,19 @@ public class GraficoBarraVerticalBuilder implements GraficoBuilder{
         CSVReader csvReader = new CSVReader();
         dataset = csvReader.readCsvToDataset();
         
-        JFreeChart chart = ChartFactory.createBarChart(
-            "",
-            "",
-            "",
-            dataset,
-            PlotOrientation.VERTICAL,
-            true, true, false);
-        
+        JFreeChart chart = new GraficoSimples().criarGrafico(PlotOrientation.VERTICAL);
+        savedChart = chart;
         ChartPanel panelChart = new ChartPanel(chart);
         panelChart.setPreferredSize(new Dimension(500, 300));
         
         
         return panelChart;
     
+    }
+
+    @Override
+    public JFreeChart getChart() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }
